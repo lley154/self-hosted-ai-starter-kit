@@ -2,7 +2,7 @@ volumes:
   ollama_storage:
 
 x-ollama: &service-ollama
-  image: ollama/ollama:latest
+  image: ollama/ollama:0.13.4
   container_name: ollama
   restart: unless-stopped
   ports:
@@ -11,7 +11,7 @@ x-ollama: &service-ollama
     - ollama_storage:/root/.ollama
 
 x-init-ollama: &init-ollama
-  image: ollama/ollama:latest
+  image: ollama/ollama:0.13.4
   container_name: ollama-pull-llama
   volumes:
     - ollama_storage:/root/.ollama
